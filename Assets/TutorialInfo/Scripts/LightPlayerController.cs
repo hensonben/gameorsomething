@@ -3,10 +3,11 @@ using UnityEngine;
 public class LightPlayerController : MonoBehaviour
 {
     public float speed = 7f;
-    public float jumpForce = 10f;
+    public float jumpForce = 3f;
     public float crouchSpeed = 5f;
     public float normalHeight = 1f;
     public float crouchHeight = 0.4f;
+    public float crouchWidthMultiplier = 1.3f;
 
     private Rigidbody2D rb;
     private Vector3 spawnPosition;
@@ -34,16 +35,28 @@ public class LightPlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        // Crouch while Down is held, snap back the moment it's released
-        float targetHeight = Input.GetKey(KeyCode.DownArrow) ? crouchHeight : normalHeight;
-        float currentHeight = transform.localScale.y;
-        float newHeight = Mathf.MoveTowards(currentHeight, targetHeight, crouchSpeed * Time.deltaTime);
+        // Crouch: shrink height, widen width, snap back on release
+        bool crouching = Input.GetKey(KeyCode.DownArrow);
+        float targetHeight = crouching ? crouchHeight : normalHeight;
+        float targetWidth = crouching ? originalWidth * crouchWidthMultiplier : originalWidth;
 
-        transform.localScale = new Vector3(originalWidth, newHeight, 1f);
+        float newHeight = Mathf.MoveTowards(transform.localScale.y, targetHeight, crouchSpeed * Time.deltaTime);
+        float newWidth = Mathf.MoveTowards(transform.localScale.x, targetWidth, crouchSpeed * Time.deltaTime);
+
+        transform.localScale = new Vector3(newWidth, newHeight, 1f);
     }
 
-    void OnCollisionEnter2D(Collision2D c) { if (c.gameObject.CompareTag("Ground")) isGrounded = true; }
-    void OnCollisionExit2D(Collision2D c) { if (c.gameObject.CompareTag("Ground")) isGrounded = false; }
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.gameObject.CompareTag("Ground") || c.gameObject.CompareTag("HeavyPlayer"))
+            isGrounded = true;
+    }
+
+    void OnCollisionExit2D(Collision2D c)
+    {
+        if (c.gameObject.CompareTag("Ground") || c.gameObject.CompareTag("HeavyPlayer"))
+            isGrounded = false;
+    }
 
     public void Respawn()
     {
