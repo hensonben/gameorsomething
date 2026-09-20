@@ -4626,6 +4626,10 @@ PrefabInstance:
       propertyPath: lightPlayer
       value: 
       objectReference: {fileID: 808173157}
+    - target: {fileID: 1947900375998126583, guid: 5e84fb284a17edd429bc25a5da3fca81, type: 3}
+      propertyPath: sceneToLoad
+      value: Victory
+      objectReference: {fileID: 0}
     - target: {fileID: 3268211687333599499, guid: 5e84fb284a17edd429bc25a5da3fca81, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4235052
@@ -8350,8 +8354,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
