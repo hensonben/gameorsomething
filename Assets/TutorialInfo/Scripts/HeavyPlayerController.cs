@@ -4,12 +4,14 @@ public class HeavyPlayerController : MonoBehaviour
 {
     public float speed = 3f;
     public float growSpeed = 15f;
+    public float growMultiplier = 2f;
     public float climbSpeed = 3f;
-    public Vector3 normalScale = new Vector3(1f, 1f, 1f);
-    public Vector3 maxScale = new Vector3(2f, 2f, 2f);
+    public float fallGravityMultiplier = 2.5f;
 
     private Rigidbody2D rb;
     private Vector3 spawnPosition;
+    private Vector3 normalScale;
+    private Vector3 maxScale;
     private float originalGravity;
     private bool isSticky;
 
@@ -17,7 +19,8 @@ public class HeavyPlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spawnPosition = transform.position;
-        transform.localScale = normalScale;
+        normalScale = transform.localScale;
+        maxScale = normalScale * growMultiplier;
         originalGravity = rb.gravityScale;
     }
 
@@ -38,8 +41,8 @@ public class HeavyPlayerController : MonoBehaviour
         }
         else
         {
-            // Normal mode: gravity restored, W/S handle grow/shrink instead
-            rb.gravityScale = originalGravity;
+            // Normal mode: gravity restored (heavier while falling), W/S handle grow/shrink instead
+            rb.gravityScale = (rb.linearVelocity.y < 0) ? originalGravity * fallGravityMultiplier : originalGravity;
             rb.linearVelocity = new Vector2(moveX * speed, rb.linearVelocity.y);
 
             Vector3 targetScale = Input.GetKey(KeyCode.W) ? maxScale : normalScale;
