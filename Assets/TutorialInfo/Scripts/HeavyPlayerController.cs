@@ -46,6 +46,11 @@ public class HeavyPlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(moveX * speed, rb.linearVelocity.y);
 
             Vector3 targetScale = Input.GetKey(KeyCode.W) ? maxScale : normalScale;
+            if (transform.localScale != targetScale)
+            {
+                AudioManager.Instance.PlaySFX("grow");
+            }
+
             transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, growSpeed * Time.deltaTime);
         }
     }
