@@ -21,14 +21,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c68c0316cd5587d47b12eb9fb38c2a70, type: 3}
     volume: 1
     pitchRange: {x: 1, y: 1}
-  - key: glass
-    clip: {fileID: 8300000, guid: c68c0316cd5587d47b12eb9fb38c2a70, type: 3}
+  - key: shrink
+    clip: {fileID: 8300000, guid: 63bef7627a7cc284b9fe7d59cac13398, type: 3}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
+  - key: grow
+    clip: {fileID: 8300000, guid: f60b35c3ebe34cb4fb368f5c85d7aef4, type: 3}
     volume: 1
     pitchRange: {x: 1, y: 1}
   musicTracks:
   - key: track1
     clip: {fileID: 8300000, guid: bbfccb560f7eb60409e32fd9416800c1, type: 3}
-    volume: 1
+    volume: 0.701
     pitchRange: {x: 0, y: 0}
   - key: track2
     clip: {fileID: 8300000, guid: 430c2630de2a8934889ee4e84b0fe41a, type: 3}
