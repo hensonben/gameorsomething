@@ -80,6 +80,8 @@ public class AudioManager : MonoBehaviour
 
         BuildSfxPool();
         BuildMusicSources();
+
+        PlayMusic("track1");
     }
 
     private void BuildSfxPool()
