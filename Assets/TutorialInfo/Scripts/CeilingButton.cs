@@ -9,6 +9,7 @@ public class CeilingButton : MonoBehaviour
     {
         if (other.CompareTag("LightPlayer") && !activated)
         {
+            AudioManager.Instance.PlaySFX("button");
             activated = true;
             barrierToRemove.SetActive(false);
         }

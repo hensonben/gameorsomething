@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d5ecad51e7cec44828d5b96120d55b, type: 3}
+  m_Name: SoundLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
+  soundEffects:
+  - key: button
+    clip: {fileID: 8300000, guid: eabda7d3041387e40bb3bccebf21810a, type: 3}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
+  - key: glass
+    clip: {fileID: 8300000, guid: c68c0316cd5587d47b12eb9fb38c2a70, type: 3}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
+  - key: shrink
+    clip: {fileID: 8300000, guid: 63bef7627a7cc284b9fe7d59cac13398, type: 3}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
+  - key: grow
+    clip: {fileID: 8300000, guid: f60b35c3ebe34cb4fb368f5c85d7aef4, type: 3}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
+  musicTracks:
+  - key: track1
+    clip: {fileID: 8300000, guid: bbfccb560f7eb60409e32fd9416800c1, type: 3}
+    volume: 0.701
+    pitchRange: {x: 0, y: 0}
+  - key: track2
+    clip: {fileID: 8300000, guid: 430c2630de2a8934889ee4e84b0fe41a, type: 3}
+    volume: 1
+    pitchRange: {x: 0, y: 0}
