@@ -3652,11 +3652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5514599323690063250, guid: ef2886c1c130643b49b3d58e96065508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.15
+      value: 8.1
       objectReference: {fileID: 0}
     - target: {fileID: 5514599323690063250, guid: ef2886c1c130643b49b3d58e96065508, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.44
+      value: 22.27
       objectReference: {fileID: 0}
     - target: {fileID: 5514599323690063250, guid: ef2886c1c130643b49b3d58e96065508, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17483,6 +17483,58 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1590849731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590849732}
+  - component: {fileID: 1590849733}
+  m_Layer: 0
+  m_Name: SoundMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590849732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590849731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71698, y: 13.97736, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590849733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590849731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e32c8eee9d53d438a6ec1097932adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  library: {fileID: 11400000, guid: 23e2049a71b4feb44bb18dd7b22d24e6, type: 2}
+  sfxPoolSize: 8
+  defaultMusicFadeDuration: 1
+  audioMixer: {fileID: 0}
+  sfxMixerGroup: {fileID: 0}
+  musicMixerGroup: {fileID: 0}
+  musicVolumeParam: MusicVolume
+  sfxVolumeParam: SFXVolume
 --- !u!1 &1606568020
 GameObject:
   m_ObjectHideFlags: 0
@@ -25131,3 +25183,4 @@ SceneRoots:
   - {fileID: 40959588}
   - {fileID: 1153697688}
   - {fileID: 489044260}
+  - {fileID: 1590849732}
